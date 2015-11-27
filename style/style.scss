@@ -1,0 +1,41 @@
+@import 'reset';
+
+$border-radius: 5px;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  text-align: center;
+  padding-top: 50px;
+}
+
+h1 {
+  font-size: 36px;
+  padding-bottom: 30px;
+}
+
+.container {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.tile {
+  margin: 10px;
+  width: 220px;
+  height: 220px;
+  background: red;
+  border-radius: $border-radius;
+  cursor: pointer;
+  position: relative;
+
+  &:hover {
+    top: 3px;
+    left: 3px;
+  }
+}
