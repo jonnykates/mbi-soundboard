@@ -60,4 +60,9 @@ h1 {
       opacity: 1;
     }
   }
+
+  &:active {
+    top: 4px;
+    left: 4px;
+  }
 }
