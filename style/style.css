@@ -72,6 +72,22 @@ h1 {
   border-radius: 5px;
   cursor: pointer;
   position: relative; }
-  .tile:hover {
-    top: 3px;
-    left: 3px; }
+  .tile .overlay {
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: 0.2s; }
+    .tile .overlay p {
+      position: relative;
+      top: 40%;
+      font-size: 20px;
+      color: #fff; }
+  .tile.hover {
+    top: 2px;
+    left: 2px;
+    transition: 0.2s; }
+    .tile.hover .overlay {
+      opacity: 1; }

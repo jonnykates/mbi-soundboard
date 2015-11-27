@@ -6,36 +6,61 @@
   <title>MB Interactive Soundboard</title>
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="style/style.css">
-  <script src="bower_components/jquery/dist/jquery.min.js"></script>
-  <script src="bower_components/angular/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
 </head>
-<body>
+<body ng-app="mbiSoundboard">
 
-<h1>The MB Interactive Soundboard</h1>
+<div class="wrapper" ng-controller="SoundController">
 
-<div class="container">
+  <h1>The MB Interactive Soundboard</h1>
 
-  <div class="tile">
+  <div class="container">
 
-  </div>
-
-  <div class="tile">
-
-  </div>
-
-  <div class="tile">
-
-  </div>
-
-  <div class="tile">
-
-  </div>
-
-  <div class="tile">
+    <div class="tile" ng-repeat="sound in sounds" style="background-image: url( {{ sound.coverImage }} )">
+      <div class="overlay">
+        <p>{{ sound.title }}</p>
+      </div>
+    </div>
 
   </div>
 
 </div>
+
+<!-- Modules -->
+<script src="js/soundboard.js"></script>
+
+<!-- Controllers -->
+<script src="js/controllers/SoundController.js"></script>
+
+<script>
+$(document).ready(function() {
+
+  $('.tile').hover(
+    function() { $(this).addClass('hover'); },
+    function() { $(this).removeClass('hover'); }
+  );
+
+  var audioElement = document.createElement('audio');
+  audioElement.setAttribute('autoplay', 'autoplay');
+  //audioElement.load()
+
+  $.get();
+
+  audioElement.addEventListener("load", function() {
+      audioElement.play();
+  }, true);
+
+  $('.tile').click(function() {
+      audioElement.setAttribute('src', 'sounds/one.wav');
+      audioElement.play();
+  });
+
+  // $('.pause').click(function() {
+  //     audioElement.pause();
+  // });
+});
+</script>
 
 </body>
 </html>
