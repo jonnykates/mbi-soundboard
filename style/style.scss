@@ -9,11 +9,13 @@ $border-radius: 5px;
 body {
   text-align: center;
   padding-top: 50px;
+  font-family: 'Open Sans', Arial, sans-serif;
 }
 
 h1 {
   font-size: 36px;
   padding-bottom: 30px;
+  font-weight: bold;
 }
 
 .container {
@@ -34,14 +36,32 @@ h1 {
   cursor: pointer;
   position: relative;
 
+  .highlighted-overlay {
+    width: 100%;
+    height: 100%;
+    border-radius: $border-radius;
+    background: #f47a20;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    &.playing {
+      display: block;
+    }
+  }
+
   .overlay {
     width: 100%;
     height: 100%;
     padding: 15px;
     border-radius: $border-radius;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0.75);
     opacity: 0;
     transition: 0.2s;
+    position: absolute;
+    top: 0;
+    left: 0;
 
     p {
       position: relative;
@@ -65,4 +85,5 @@ h1 {
     top: 4px;
     left: 4px;
   }
+
 }
