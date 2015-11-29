@@ -1,6 +1,8 @@
 # mbi-soundboard
 
-`js/controllers/SoundController.js` contains the JSON model for the ng-repeat tile in the HTML. Each tile should have 3 data keys:
+This is a simple Angular application for triggering .mp3 files on a click event.
+
+There is one controller; `js/controllers/SoundController.js`, which contains the JSON model for the ng-repeat tile in the HTML. Each tile should have 3 data keys:
 
 - id: This is the name of the .mp3 file that is located in `sounds`. These must match!
 - title: The text that displays on tile:hover
